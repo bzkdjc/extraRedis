@@ -1,6 +1,6 @@
 {
   "name": "extraRedis",
-  "version": "1.4.1",
+  "version": "1.4.1-1",
   "description": "redis api that provides lot of features",
   "main": "lib/extraRedis.js",
   "dependencies": {
@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maty21/extraRedis.git"
+    "url": "git+https://github.com/bzkdjc/extraRedis.git"
   },
   "keywords": [
     "redis",
@@ -35,7 +35,7 @@
     "filter"
   ],
   "bugs": {
-    "url": "https://github.com/maty21/extraRedis/issues"
+    "url": "https://github.com/bzkdjc/extraRedis/issues"
   },
-  "homepage": "https://github.com/maty21/extraRedis#readme"
+  "homepage": "https://github.com/bzkdjc/extraRedis#readme"
 }
