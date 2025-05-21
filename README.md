@@ -1,6 +1,6 @@
 # extraRedis
 
-[for more information visit extraRedis site](https://maty21.github.io/extraRedis/ "ExtraRedis Homepage")
+This is my fork of [extraRedis](https://maty21.github.io/extraRedis/ "ExtraRedis Homepage")
 
 [![NPM](https://nodei.co/npm/extraRedis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/extraRedis/)
 
@@ -19,7 +19,12 @@ More details below under the user instructions section
 
 ```javascript
 
-var ERedis = new extraRedis({port:6379,host:"127.0.0.1"});
+var ERedis = new extraRedis({
+  port    : 6379,
+  host    : "127.0.0.1",
+  password: "-someRedisPwd-"
+});
+// connects to db 0 by default
 ```
 
 #### creating simple pub sub with multiple subscribers
@@ -27,11 +32,11 @@ var ERedis = new extraRedis({port:6379,host:"127.0.0.1"});
 ```javascript
 
 ERedis.on('foo',(message)=>{
-    console.log('foo -> '+message);
+  console.log('foo -> '+message);
 },guid=>{console.log('guidfoo-> '+guid)})
 
 ERedis.on('foo',(message)=>{
-    console.log('foo2 -> '+message);
+  console.log('foo2 -> '+message);
 },guid=>{console.log('guidfoo2-> '+guid)})
 
 ERedis.emit('foo','bar');
@@ -46,12 +51,12 @@ ERedis.emit('foo','bar');
 
 ```javascript
 ERedis.requestReply.on('reqReplyFoo',(message,func)=>{
-    console.log('reqReplyFoo-> '+message);
-    func('reqReplyOnBar');
+  console.log('reqReplyFoo-> '+message);
+  func('reqReplyOnBar');
 })
 
 ERedis.requestReply.emit('reqReplyFoo','reqReplyBar').then((message)=>{
-    console.log('reqReplyOnFoo-> '+message);
+  console.log('reqReplyOnFoo-> '+message);
 
 }).catch((e)=>{ console.log('ERROR!!!! '+e)});
 
@@ -71,25 +76,25 @@ ERedis.requestReply.emit('reqReplyFoo','reqReplyBar').then((message)=>{
 ERedis.producerConsumer.createJob('prodConsTest');
 
 ERedis.producerConsumer.consume('prodConsTest', (message, finishFunction)=> {
-    setTimeout(()=> {
-        console.log(`message consumed -> ${message}`);
-        finishFunction();
-    }, 5000)
+  setTimeout(()=> {
+    console.log(`message consumed -> ${message}`);
+    finishFunction();
+  }, 5000)
 
 });
 ERedis.producerConsumer.consume('prodConsTest', (message, finishFunction)=> {
-    setTimeout(()=> {
-        console.log(`message consumed -> ${message}`);
-        finishFunction();
-    }, 5000)
+  setTimeout(()=> {
+    console.log(`message consumed -> ${message}`);
+    finishFunction();
+  }, 5000)
 });
 
 
 setTimeout(()=> {
-    ERedis.producerConsumer.produce('produce job 1');
-    ERedis.producerConsumer.produce('produce job 2');
-    ERedis.producerConsumer.produce('produce job 3');
-    console.log("sending job for producing")
+  ERedis.producerConsumer.produce('produce job 1');
+  ERedis.producerConsumer.produce('produce job 2');
+  ERedis.producerConsumer.produce('produce job 3');
+  console.log("sending job for producing")
 }, 5000)
 
 // message consumed -> produce job 1
@@ -102,9 +107,9 @@ setTimeout(()=> {
 ```javascript
 
 ERedis.queryable.createQueryableInstance('foo')
-                       .subscribe(message =>{
-                           console.log(`queryable Instance -> ${message}`)
-                       })
+                .subscribe(message =>{
+                  console.log(`queryable Instance -> ${message}`)
+                })
 
 // queryable Instance -> bar
 
@@ -116,12 +121,12 @@ ERedis.queryable.createQueryableInstance('foo')
 ```javascript
 
 ERedis.queryable.createQueryableInstance('foo')
-    .filter((message)=>{
-        return message.valueOf() =='bar'
-    })
-    .subscribe(message =>{
-        console.log(`queryable Instance with filter -> ${message}`)
-    })
+  .filter((message)=>{
+    return message.valueOf() =='bar'
+  })
+  .subscribe(message =>{
+    console.log(`queryable Instance with filter -> ${message}`)
+  })
 // queryable Instance with filter -> bar
 
 ```
