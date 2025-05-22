@@ -1,4 +1,4 @@
-# extraRedis
+# extra-redis
 
 This is "extra-redis", my fork of [extraRedis](https://maty21.github.io/extraRedis/ "ExtraRedis Homepage")
 
