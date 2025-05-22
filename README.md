@@ -1,8 +1,18 @@
 # extraRedis
 
-This is my fork of [extraRedis](https://maty21.github.io/extraRedis/ "ExtraRedis Homepage")
+This is "extra-redis", my fork of [extraRedis](https://maty21.github.io/extraRedis/ "ExtraRedis Homepage")
 
-[![NPM](https://nodei.co/npm/extraRedis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/extraRedis/)
+Install:
+```bash
+npm i -S bzkdjc/extraRedis
+```
+
+Uninstall:
+```bash
+npm un -S extra-redis
+```
+
+[comment]: <> ([![NPM](https://nodei.co/npm/extraRedis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/extraRedis/))
 
 ###redis api that provides lot of features :
 - [x] **pub/sub -**  a simple api for publishing and subscribing messages without the needing to listen 'message' and to if your topic on it
