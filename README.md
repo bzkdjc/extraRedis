@@ -12,7 +12,7 @@ Uninstall:
 npm un -S extra-redis
 ```
 
-[[![NPM](https://nodei.co/npm/extraRedis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/extraRedis/)]::
+<!-- [![NPM](https://nodei.co/npm/extraRedis.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/extraRedis/) -->
 
 ###redis api that provides lot of features :
 - [x] **pub/sub -**  a simple api for publishing and subscribing messages without the needing to listen 'message' and to if your topic on it
